@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuroCare Health – Inclusive Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', serif;
+      color: #0E1B2A;
+      background: #f9fcff;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .brand-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #0E1B2A, #005f99);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #0E1B2A;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #005f99;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, #B0E0E6, #E6F7FF);
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 52px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(90deg,#89CFF0,#87CEEB);
+      color: #08314a;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg,#87CEEB,#ADD8E6);
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      animation: slideUp 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    /* Stats */
+    .stats {
+      background: linear-gradient(135deg,#E6F7FF,#B0E0E6);
+      padding: 60px 20px;
+      margin-top: 40px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .stat {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .stat:hover {
+      transform: scale(1.05);
+    }
+
+    .stat h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 34px;
+      margin: 0;
+      color: #005f99;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(90deg,#87CEEB,#ADD8E6);
+      padding: 40px 20px;
+      text-align: center;
+      margin: 60px auto;
+      border-radius: 20px;
+      max-width: 1000px;
+      animation: fadeIn 2s ease;
+    }
+
+    .cta h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      border-top: 1px solid #e6edf5;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-name">NeuroCare</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#vision">Vision</a>
+      <a href="#impact">Impact</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Inclusive Healthcare for Learning & Developmental Disabilities</h1>
+    <p>Evidence-based therapy, caregiver guidance, and a multilingual digital platform designed to empower families and transform lives.</p>
+    <a href="#contact" class="btn">Start Your Journey</a>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">At <b>NeuroCare Health</b>, we believe in accessible and inclusive healthcare for every child. Our holistic approach combines therapy, education, and caregiver empowerment to ensure meaningful progress. We operate on the principles of compassion, innovation, and evidence-driven practices.</p>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs">
+    <h2 class="section-title">Our Programs</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Early Diagnosis & Therapy</h3>
+        <p>Speech, occupational, behavioural, and cognitive therapies with in-depth evaluations.</p>
+      </div>
+      <div class="card">
+        <h3>Caregiver Coaching</h3>
+        <p>Progress reports, multilingual guides, and helplines to support families with compassion.</p>
+      </div>
+      <div class="card">
+        <h3>Special Education Support</h3>
+        <p>Learning interventions that strengthen academic performance and life skills.</p>
+      </div>
+      <div class="card">
+        <h3>Digital Health Platform</h3>
+        <p>A multilingual app with resources, live therapy, and continuous progress tracking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section id="vision">
+    <h2 class="section-title">Vision & Mission</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>To build a world where every child with learning and developmental disabilities has equal opportunities to thrive and succeed.</p>
+      </div>
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>Deliver accessible, affordable, and impactful healthcare solutions through innovation, partnerships, and empathy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section id="impact" class="stats">
+    <h2 class="section-title">Our Impact</h2>
+    <div class="stats-grid">
+      <div class="stat"><h2>1,200+</h2><p>Children Reached</p></div>
+      <div class="stat"><h2>200+</h2><p>Caregiver Workshops</p></div>
+      <div class="stat"><h2>10,000+</h2><p>Platform Users</p></div>
+      <div class="stat"><h2>7</h2><p>Languages Supported</p></div>
+    </div>
+    <p style="text-align:center; margin-top:30px; font-size:14px;"><b>Aligned with UN SDGs:</b> Good Health & Wellbeing (SDG 3), Quality Education (SDG 4), and Reduced Inequalities (SDG 10).</p>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to Begin? Speak to Our Care Team Today</h2>
+    <p>Email: <a href="mailto:careers@neurocare.com">careers@neurocare.com</a> | Helpline: +91-9898987665</p>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2025 NeuroCare Health Pvt. Ltd. | All rights reserved.</p>
+  </footer>
+</body>
+</html>
